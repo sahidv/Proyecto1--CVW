@@ -17,10 +17,13 @@ nb-configuration.xml
 manifest.mf
 buildm.xml
 
-#Generic Files
+#Generic Files#
 *~
 *.lock
 *.DS_Store
 *.swp
 *.out
 *.ini
+
+#Proyecto#
+VampireWareGame/build.xml
