@@ -1,11 +1,11 @@
-#Java
+#Java#
 *.class
-#Package Files
+#Package Files#
 *.jar
 *.war
 *.ear
 
-#Netbeans
+#Netbeans#
 nbproject/
 nbproject/private/
 build/
