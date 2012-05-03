@@ -1,0 +1,26 @@
+#Java
+*.class
+#Package Files
+*.jar
+*.war
+*.ear
+
+#Netbeans
+nbproject/
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+manifest.mf
+buildm.xml
+
+#Generic Files
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+*.ini
