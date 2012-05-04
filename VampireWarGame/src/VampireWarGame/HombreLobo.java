@@ -16,12 +16,12 @@ public class HombreLobo extends Fichas{
     }
     
     @Override
-    protected void setCantMovimientos(int cant){
+    public void setCantMovimientos(int cant){
         cantMovientos = cant;
     }
     
     @Override
-    protected void setCantLP(int lp){
+    public void setCantLP(int lp){
         lifePoints = lp;
     }
     
@@ -37,7 +37,7 @@ public class HombreLobo extends Fichas{
      *         se lo restamos a los LP's de la ficha atacada
      */
     @Override
-    protected int setDamagePoints(int codFichaContraria){
+    public int setDamagePoints(int codFichaContraria){
         switch (codFichaContraria){
             case 1:
                 return -3;
