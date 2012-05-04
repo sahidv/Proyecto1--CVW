@@ -19,18 +19,18 @@ public class Vampire extends Fichas{
     }
     
     @Override
-    protected void setCantLP(int lp){
+    public void setCantLP(int lp){
         lifePoints = lp;
     }
     
     @Override
-    protected void setCantMovimientos(int cant){
+    public void setCantMovimientos(int cant){
         lifePoints = cant;
     }
     
     //FUNCIÓN PARA OBETNER LA DISTANCIA A QUE ESTA DE LA OTRA CASILLA
     //PARA ASI HACER LA FUNCION DE ATAQUE
-    protected int getDistancia(int distancia){
+    public int getDistancia(int distancia){
         return 0;
     }
     
@@ -46,7 +46,7 @@ public class Vampire extends Fichas{
      *         se lo restamos a los LP's de la ficha atacada
      */
     @Override
-    protected int setDamagePoints(int codFichaContraria){
+    public int setDamagePoints(int codFichaContraria){
         switch (codFichaContraria){
             case 1:
                 return -3;
