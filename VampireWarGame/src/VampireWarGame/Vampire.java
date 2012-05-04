@@ -19,12 +19,44 @@ public class Vampire extends Fichas{
     }
     
     @Override
+    protected void setCantLP(int lp){
+        lifePoints = lp;
+    }
+    
+    @Override
     protected void setCantMovimientos(int cant){
         lifePoints = cant;
     }
     
+    //FUNCIÓN PARA OBETNER LA DISTANCIA A QUE ESTA DE LA OTRA CASILLA
+    //PARA ASI HACER LA FUNCION DE ATAQUE
+    protected int getDistancia(int distancia){
+        return 0;
+    }
+    
+    /**
+     * 
+     * @param codFichaContraria
+     * @Param Lista de codigos de fichas:
+     *        1 Hombre Lobo
+     *        2 Vampiro
+     *        3 Muerte
+     *        4 Zombie
+     * @return el daño total que le hace a la ficha contraria, este valo
+     *         se lo restamos a los LP's de la ficha atacada
+     */
     @Override
-    protected void setCantLP(int lp){
-        lifePoints = lp;
+    protected int setDamagePoints(int codFichaContraria){
+        switch (codFichaContraria){
+            case 1:
+                return -3;
+            case 2:
+                return -2;
+            case 3:
+                return -1;
+            case 4:
+                return -2;
+            default: return 0;     
+        } 
     }
 }
