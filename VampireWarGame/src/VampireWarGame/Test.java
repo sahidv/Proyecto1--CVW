@@ -8,6 +8,7 @@ package VampireWarGame;
 /**
  *
  * @author Familia Sevilla
+ * 
  */
 public class Test {
     

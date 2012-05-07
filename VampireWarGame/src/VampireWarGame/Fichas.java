@@ -1,20 +1,24 @@
 package VampireWarGame;
+
 /**
  *
  * @author drako
  * 
  */
+
 public abstract class Fichas {
-    public String nombreFicha;
-    public String colorFicha;
-    
+    protected String nombreFicha;
+    protected String colorFicha;
+
     public Fichas(String nombre, String color){
         nombreFicha = nombre;
         colorFicha = color;
     }
     
-    protected abstract void setCantMovimientos(int cant);
+    public abstract void setCantMovimientos(int cant);
     
-    protected abstract void setCantLP(int lp);
+    public abstract void setCantLP(int lp);
+    
+    public abstract int setDamagePoints(int codigoFicha);
     
 }

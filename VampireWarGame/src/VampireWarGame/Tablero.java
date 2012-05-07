@@ -7,6 +7,7 @@ package VampireWarGame;
 /**
  *
  * @author Familia Sevilla
+ * 
  */
 public class Tablero {
         public static Fichas Arreglo[][]=new Fichas[6][6];
