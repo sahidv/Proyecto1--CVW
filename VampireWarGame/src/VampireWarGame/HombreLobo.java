@@ -25,6 +25,7 @@ public class HombreLobo extends Fichas{
         lifePoints = lp;
     }
     
+
     /**
      * 
      * @param codFichaContraria
@@ -50,5 +51,5 @@ public class HombreLobo extends Fichas{
             default: return 0;     
         } 
     }
-    
+
 }
