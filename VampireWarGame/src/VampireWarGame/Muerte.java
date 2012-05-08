@@ -16,6 +16,10 @@ public class Muerte extends Fichas{
         super(nombre,col);
     }
     
+    public void castZombie(){
+        
+    }
+    
     @Override
     public void setCantMovimientos(int cant){
         cantMovientos = cant;
@@ -25,6 +29,18 @@ public class Muerte extends Fichas{
     public void setCantLP(int lp){
         lifePoints = lp;
     }
+    
+    /**
+     * 
+     * @param codFichaContraria
+     * @Param Lista de codigos de fichas:
+     *        1 Hombre Lobo
+     *        2 Vampiro
+     *        3 Muerte
+     *        4 Zombie
+     * @return el daño total que le hace a la ficha contraria, este valo
+     *         se lo restamos a los LP's de la ficha atacada
+     */
     
     @Override
     public int setDamagePoints(int codFichaContraria){
