@@ -7,6 +7,9 @@ package VampireWarGame;
  */
 
 public abstract class Fichas {
+    protected int lifePoints;
+    protected int damagePoints;
+    protected int cantMovientos;
     protected String nombreFicha;
     protected String colorFicha;
 
@@ -20,5 +23,8 @@ public abstract class Fichas {
     public abstract void setCantLP(int lp);
     
     public abstract int setDamagePoints(int codigoFicha);
+
+    
+    
     
 }
