@@ -10,9 +10,7 @@ package VampireWarGame;
  * 
  */
 public class Vampire extends Fichas{
-    protected int lifePoints;
-    protected int damagePoints;
-    protected int cantMovientos;
+    public static final int codFicha = 2;
     
     public Vampire (String nombre, String col){
         super(nombre,col);
