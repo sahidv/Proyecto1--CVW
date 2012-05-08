@@ -17,5 +17,7 @@ public class Test {
     Tablero TB=new Tablero();
     TB.Iniciar();
     TB.Imprimir();
+    TB.Movimiento("A1", "B3");
+    TB.Imprimir();
     }
 }
