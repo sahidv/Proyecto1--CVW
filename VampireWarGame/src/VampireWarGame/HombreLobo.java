@@ -6,10 +6,7 @@ package VampireWarGame;
  * 
  */
 public class HombreLobo extends Fichas{
-    protected int lifePoints;
-    protected int damagePoints;
-    protected int cantMovientos;
-    protected int codigoFicha = 1;
+    public static final int codigoFicha = 1;
     
     public HombreLobo(String nombre, String color){
         super(nombre,color);
@@ -34,9 +31,10 @@ public class HombreLobo extends Fichas{
      *        2 Vampiro
      *        3 Muerte
      *        4 Zombie
-     * @return el daño total que le hace a la ficha contraria, este valo
+     * @return el daño total que le hace a la ficha contraria, este valor
      *         se lo restamos a los LP's de la ficha atacada
      */
+    
     @Override
     public int setDamagePoints(int codFichaContraria){
         switch (codFichaContraria){
