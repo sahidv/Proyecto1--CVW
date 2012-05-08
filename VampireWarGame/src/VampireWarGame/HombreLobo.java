@@ -46,8 +46,9 @@ public class HombreLobo extends Fichas{
                 return -1;
             case 4:
                 return -2;
-            default: return 0;     
+            default: return 0;       
         } 
     }
+
 
 }

@@ -10,6 +10,8 @@ public abstract class Fichas {
     protected int lifePoints;
     protected int damagePoints;
     protected int cantMovientos;
+    protected static int POSICION_X;
+    protected static int POSICION_Y;
     protected String nombreFicha;
     protected String colorFicha;
 
@@ -24,7 +26,7 @@ public abstract class Fichas {
     
     public abstract int setDamagePoints(int codigoFicha);
 
-    
-    
-    
+//    public abstract void setPOSICION_X(int POSICION_X);
+
+  //  public abstract void setPOSICION_Y(int POSICION_Y);
 }
