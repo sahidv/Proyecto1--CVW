@@ -32,12 +32,12 @@ public class Tablero {
             Arreglo[0][5]=MR2B;
         
             
-        Fichas HL1N=new HombreLobo("HL1B","Negro");
-        Fichas VP1N=new Vampire("VP1B","Negro");
-        Fichas MR1N=new Muerte("MR1B","Negro");
-        Fichas HL2N=new HombreLobo("HL2B","Negro");
-        Fichas VP2N=new Vampire("VP2B","Negro");
-        Fichas MR2N=new Muerte("MR2B","Negro");
+        Fichas HL1N=new HombreLobo("HL1N","Negro");
+        Fichas VP1N=new Vampire("VP1N","Negro");
+        Fichas MR1N=new Muerte("MR1N","Negro");
+        Fichas HL2N=new HombreLobo("HL2N","Negro");
+        Fichas VP2N=new Vampire("VP2N","Negro");
+        Fichas MR2N=new Muerte("MR2N","Negro");
         
             Arreglo[5][0]=HL1N;
             Arreglo[5][1]=VP1N;
@@ -59,6 +59,33 @@ public class Tablero {
                 }
                 System.out.println(" ");
         }
+      System.out.println(" "); 
     }
-
+    
+    public void Movimiento(String xy,String xyp){
+       String p= ""+xy.charAt(1);
+       String p1= ""+xyp.charAt(1);
+      
+        int y = y(xy.charAt(0));
+        int x = Integer.parseInt(p);
+        int yp = y(xyp.charAt(0));
+        int xp = Integer.parseInt(p1);
+        
+       Arreglo[yp][xp]=Arreglo[y][x];
+       Arreglo[y][x]=null;
+        
+    
+    }
+    
+    public int y(char y){
+        switch(y){   
+    case 'A': return 0;
+    case 'B': return 1;
+    case 'C': return 2;
+    case 'D': return 3;
+    case 'E': return 4;
+    case 'F': return 5;
+    default: return -1;
+        }
+    }
 }   
