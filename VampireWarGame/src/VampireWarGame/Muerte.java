@@ -56,4 +56,14 @@ public class Muerte extends Fichas{
             default: return 0;     
         } 
     }
+
+    @Override
+    public void setMovimientos(String x, String y) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void Movientos() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 }
