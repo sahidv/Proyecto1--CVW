@@ -17,11 +17,6 @@ public class Vampire extends Fichas{
     }
     
     @Override
-    public void setCantLP(int lp){
-        lifePoints = lp;
-    }
-    
-    @Override
     public void setCantMovimientos(int cant){
         lifePoints = cant;
     }
@@ -65,6 +60,11 @@ public class Vampire extends Fichas{
 
     @Override
     public void Movientos() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public boolean validarMovieminto(String posInicial, String posDestino) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 }
