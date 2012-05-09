@@ -6,10 +6,12 @@ package VampireWarGame;
  * 
  */
 public class HombreLobo extends Fichas{
+    
     public static final int codigoFicha = 1;
     
     public HombreLobo(String nombre, String color){
         super(nombre,color);
+        lifePoints = 10;
     }
     
      
@@ -18,12 +20,6 @@ public class HombreLobo extends Fichas{
     public void setCantMovimientos(int cant){
         cantMovientos = cant;
     }
-    
-    @Override
-    public void setCantLP(int lp){
-        lifePoints = lp;
-    }
-    
 
     /**
      * 
@@ -62,4 +58,24 @@ public class HombreLobo extends Fichas{
         Tablero tb = new Tablero();
         tb.Movimiento(posActual, posDestino);
     }
+
+    @Override
+    public boolean validarMovieminto(String posInicial, String posDestino) {
+       String p1= ""+posInicial.charAt(1);
+       String p2= ""+posDestino.charAt(1);
+      
+        int YposActual = y(posInicial.charAt(0));
+        int XposActual = Integer.parseInt(p1);
+        int YposDestino = y(posDestino.charAt(0));
+        int XposDestino = Integer.parseInt(p2);
+        
+        //aqui va validar el movimiento
+       
+        
+        Tablero.MMovimiento(YposActual,XposActual,YposDestino,XposDestino);
+        return true;
+    }
+    
+        
 }
+        
