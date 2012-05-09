@@ -25,11 +25,6 @@ public class Muerte extends Fichas{
         cantMovientos = cant;
     }
     
-    @Override
-    public void setCantLP(int lp){
-        lifePoints = lp;
-    }
-    
     /**
      * 
      * @param codFichaContraria
@@ -64,6 +59,11 @@ public class Muerte extends Fichas{
 
     @Override
     public void Movientos() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public boolean validarMovieminto(String posInicial, String posDestino) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 }

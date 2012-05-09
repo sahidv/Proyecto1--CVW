@@ -73,8 +73,7 @@ public class Tablero {
         
        Arreglo[yp][xp]=Arreglo[y][x];
        Arreglo[y][x]=null;
-        
-    
+
     }
     
     public int y(char y){
