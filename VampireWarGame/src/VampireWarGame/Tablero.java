@@ -64,16 +64,22 @@ public class Tablero {
     
     public void Movimiento(String posActual,String posDestino){
        String p1= ""+posActual.charAt(1);
-       String p2= ""+posDestino.charAt(1);
+       
       
         int YposActual = y(posActual.charAt(0));
         int XposActual = Integer.parseInt(p1);
-        int YposDestino = y(posDestino.charAt(0));
-        int XposDestino = Integer.parseInt(p2);
         
-       Arreglo[YposDestino][XposDestino]=Arreglo[YposActual][XposActual];
+        
+      
+       Arreglo[YposActual][XposActual].validarMovieminto(posActual, posDestino);
+        
+    
+    }
+    
+    public static void MMovimiento(int YposActual,int XposActual,int YposDestino,int XposDestino){
+       
+      Arreglo[YposDestino][XposDestino]=Arreglo[YposActual][XposActual];
        Arreglo[YposActual][XposActual]=null;
-        
     
     }
     
@@ -88,4 +94,11 @@ public class Tablero {
     default: return -1;
         }
     }
+    public void ValidarMovimiento(int M){
+        switch (M){
+            case 1:
+                
+        }
+    }
+    
 }   
