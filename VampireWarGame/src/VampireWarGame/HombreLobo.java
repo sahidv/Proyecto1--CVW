@@ -6,10 +6,12 @@ package VampireWarGame;
  * 
  */
 public class HombreLobo extends Fichas{
+    
     public static final int codigoFicha = 1;
     
     public HombreLobo(String nombre, String color){
         super(nombre,color);
+        lifePoints = 10;
     }
     
      
@@ -18,12 +20,6 @@ public class HombreLobo extends Fichas{
     public void setCantMovimientos(int cant){
         cantMovientos = cant;
     }
-    
-    @Override
-    public void setCantLP(int lp){
-        lifePoints = lp;
-    }
-    
 
     /**
      * 
@@ -62,4 +58,12 @@ public class HombreLobo extends Fichas{
         Tablero tb = new Tablero();
         tb.Movimiento(posActual, posDestino);
     }
+
+    @Override
+    public boolean validarMovieminto(String posInicial, String posDestino) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+    
+        
 }
+        
