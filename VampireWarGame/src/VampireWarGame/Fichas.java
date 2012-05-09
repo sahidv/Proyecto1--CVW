@@ -25,6 +25,10 @@ public abstract class Fichas {
     public abstract void setCantLP(int lp);
     
     public abstract int setDamagePoints(int codigoFicha);
+    
+    public abstract void setMovimientos(String x, String y);
+    
+    public abstract void Movientos();
 
 //    public abstract void setPOSICION_X(int POSICION_X);
 
