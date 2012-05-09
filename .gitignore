@@ -1,11 +1,21 @@
+<<<<<<< HEAD
 #Java
 *.class
 #Package Files
+=======
+#Java#
+*.class
+#Package Files#
+>>>>>>> 52ddfd6a60c7747538d26c63ed877e2ad059b37d
 *.jar
 *.war
 *.ear
 
+<<<<<<< HEAD
 #Netbeans
+=======
+#Netbeans#
+>>>>>>> 52ddfd6a60c7747538d26c63ed877e2ad059b37d
 nbproject/
 nbproject/private/
 build/
@@ -17,10 +27,20 @@ nb-configuration.xml
 manifest.mf
 buildm.xml
 
+<<<<<<< HEAD
 #Generic Files
+=======
+#Generic Files#
+>>>>>>> 52ddfd6a60c7747538d26c63ed877e2ad059b37d
 *~
 *.lock
 *.DS_Store
 *.swp
 *.out
 *.ini
+<<<<<<< HEAD
+=======
+
+#Proyecto#
+VampireWareGame/build.xml
+>>>>>>> 52ddfd6a60c7747538d26c63ed877e2ad059b37d
