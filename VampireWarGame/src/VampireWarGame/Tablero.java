@@ -63,16 +63,16 @@ public class Tablero {
     }
     
     public void Movimiento(String posActual,String posDestino){
-       String p= ""+posActual.charAt(1);
-       String p1= ""+posDestino.charAt(1);
+       String p1= ""+posActual.charAt(1);
+       String p2= ""+posDestino.charAt(1);
       
-        int y = y(posActual.charAt(0));
-        int x = Integer.parseInt(p);
-        int yp = y(posDestino.charAt(0));
-        int xp = Integer.parseInt(p1);
+        int YposActual = y(posActual.charAt(0));
+        int XposActual = Integer.parseInt(p1);
+        int YposDestino = y(posDestino.charAt(0));
+        int XposDestino = Integer.parseInt(p2);
         
-       Arreglo[yp][xp]=Arreglo[y][x];
-       Arreglo[y][x]=null;
+       Arreglo[YposDestino][XposDestino]=Arreglo[YposActual][XposActual];
+       Arreglo[YposActual][XposActual]=null;
         
     
     }
