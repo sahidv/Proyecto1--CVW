@@ -12,6 +12,8 @@ public class HombreLobo extends Fichas{
         super(nombre,color);
     }
     
+     
+    
     @Override
     public void setCantMovimientos(int cant){
         cantMovientos = cant;
@@ -49,6 +51,15 @@ public class HombreLobo extends Fichas{
             default: return 0;       
         } 
     }
+    
+    @Override
+    public void Movientos() {
+        
+    }
 
-
+    @Override
+    public void setMovimientos(String posActual, String posDestino) {
+        Tablero tb = new Tablero();
+        tb.Movimiento(posActual, posDestino);
+    }
 }
