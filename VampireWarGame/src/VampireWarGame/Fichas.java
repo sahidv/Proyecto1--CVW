@@ -22,7 +22,7 @@ public abstract class Fichas {
     
     public abstract void setCantMovimientos(int cant);
     
-    public abstract void setCantLP(int lp);
+    public abstract boolean validarMovieminto(String posInicial, String posDestino);
     
     public abstract int setDamagePoints(int codigoFicha);
     
