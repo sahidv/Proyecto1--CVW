@@ -20,15 +20,11 @@ public abstract class Fichas {
         colorFicha = color;
     }
     
-    public abstract void setCantMovimientos(int cant);
+   public abstract boolean validarMovieminto(String posInicial, String posDestino);
     
-    public abstract boolean validarMovieminto(String posInicial, String posDestino);
+    public abstract boolean ValidarAtaque(String posInicial, String posEnemigo);
     
     public abstract int setDamagePoints(int codigoFicha);
-    
-    public abstract void setMovimientos(String x, String y);
-    
-    public abstract void Movientos();
     
     public int y(char y){
         switch(y){   
@@ -41,10 +37,6 @@ public abstract class Fichas {
     default: return -1;
         }
     }
-
-// PROBANDO EL REPO DE GITHIB
-      public abstract void prueba(){
-      }
 
 //    public abstract void setPOSICION_X(int POSICION_X);
 
