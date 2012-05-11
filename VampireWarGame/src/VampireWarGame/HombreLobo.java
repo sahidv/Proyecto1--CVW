@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package VampireWarGame;
 
 /**
@@ -9,16 +5,16 @@ package VampireWarGame;
  * @author drako
  * 
  */
-public class Muerte extends Fichas{
-    public static final int codFicha = 3;
+public class HombreLobo extends Fichas{
     
-    public Muerte (String nombre, String col){
-        super(nombre,col);
+    public static final int codigoFicha = 1;
+    
+    public HombreLobo(String nombre, String color){
+        super(nombre,color);
+        lifePoints = 10;
     }
     
-    public void castZombie(){
-        
-    }
+     
     
     /**
      * 
@@ -28,7 +24,7 @@ public class Muerte extends Fichas{
      *        2 Vampiro
      *        3 Muerte
      *        4 Zombie
-     * @return el daño total que le hace a la ficha contraria, este valo
+     * @return el daño total que le hace a la ficha contraria, este valor
      *         se lo restamos a los LP's de la ficha atacada
      */
     
@@ -43,11 +39,11 @@ public class Muerte extends Fichas{
                 return -1;
             case 4:
                 return -2;
-            default: return 0;     
+            default: return 0;       
         } 
     }
-
-    @Override
+    
+   @Override
     public boolean validarMovieminto(String posInicial, String posDestino) {
        String p1= ""+posInicial.charAt(1);
        String p2= ""+posDestino.charAt(1);
@@ -82,4 +78,7 @@ public class Muerte extends Fichas{
         //
         return true;
     }
+    
+        
 }
+        
