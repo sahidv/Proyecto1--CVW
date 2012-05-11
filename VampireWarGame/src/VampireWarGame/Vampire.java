@@ -16,17 +16,10 @@ public class Vampire extends Fichas{
         super(nombre,col);
     }
     
-    @Override
-    public void setCantMovimientos(int cant){
-        lifePoints = cant;
-    }
-    
+       
     //FUNCIÓN PARA OBETNER LA DISTANCIA A QUE ESTA DE LA OTRA CASILLA
     //PARA ASI HACER LA FUNCION DE ATAQUE
-    public int getDistancia(int distancia){
-        return 0;
-    }
-    
+       
     /**
      * 
      * @param codFichaContraria
@@ -54,17 +47,38 @@ public class Vampire extends Fichas{
     }
 
     @Override
-    public void setMovimientos(String x, String y) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public void Movientos() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
     public boolean validarMovieminto(String posInicial, String posDestino) {
-        throw new UnsupportedOperationException("Not supported yet.");
+       String p1= ""+posInicial.charAt(1);
+       String p2= ""+posDestino.charAt(1);
+      
+        int YposActual = y(posInicial.charAt(0));
+        int XposActual = Integer.parseInt(p1);
+        int YposDestino = y(posDestino.charAt(0));
+        int XposDestino = Integer.parseInt(p2);
+        
+        //aqui va validar el movimiento
+       
+        //aqui llama la funcion de tabla que hace el movmiento
+        // y retorna true a tablero
+        Tablero.HacerElMovimiento(YposActual,XposActual,YposDestino,XposDestino);
+        return true;
+    }
+
+    @Override
+    public boolean ValidarAtaque(String posInicial, String posEnemigo) {
+        String p1= ""+posInicial.charAt(1);
+        String p2= ""+posEnemigo.charAt(1);
+      
+        int YposActual = y(posInicial.charAt(0));
+        int XposActual = Integer.parseInt(p1);
+        int YposDestino = y(posEnemigo.charAt(0));
+        int XposDestino = Integer.parseInt(p2);
+        
+        //aqui va validar el Ataque
+       
+        //aqui llama la funcion de que Hace el Atque y hace el dano a la ficha contraria
+        // y retorna true a tablero
+        //
+        return true;
     }
 }

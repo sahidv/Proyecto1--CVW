@@ -17,14 +17,6 @@ public class Zombie extends Fichas{
     }
     
     
-    @Override
-    public void setCantMovimientos(int cant){
-        cantMovientos = cant;
-    }
-    
-
-    
-
     /**
      * 
      * @param codFichaContraria
@@ -53,13 +45,21 @@ public class Zombie extends Fichas{
     }
 
     @Override
-    public void setMovimientos(String x, String y) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public void Movientos() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public boolean ValidarAtaque(String posInicial, String posEnemigo) {
+        String p1= ""+posInicial.charAt(1);
+        String p2= ""+posEnemigo.charAt(1);
+      
+        int YposActual = y(posInicial.charAt(0));
+        int XposActual = Integer.parseInt(p1);
+        int YposDestino = y(posEnemigo.charAt(0));
+        int XposDestino = Integer.parseInt(p2);
+        
+        //aqui va validar el Ataque
+       
+        //aqui llama la funcion de que Hace el Atque y hace el dano a la ficha contraria
+        // y retorna true a tablero
+        //
+        return true;
     }
 
     @Override

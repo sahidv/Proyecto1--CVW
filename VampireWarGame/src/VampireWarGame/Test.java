@@ -13,10 +13,11 @@ package VampireWarGame;
 public class Test {
     
     public static void main(String args[]){
-    /*
+   
     Tablero TB=new Tablero();
     TB.Iniciar();
     TB.Imprimir();
-    */
+    TB.Movimiento("A1", "C4");
+    TB.Imprimir();
     }
 }
