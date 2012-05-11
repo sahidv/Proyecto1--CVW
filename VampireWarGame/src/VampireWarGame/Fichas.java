@@ -42,6 +42,10 @@ public abstract class Fichas {
         }
     }
 
+// PROBANDO EL REPO DE GITHIB
+      public abstract void prueba(){
+      }
+
 //    public abstract void setPOSICION_X(int POSICION_X);
 
   //  public abstract void setPOSICION_Y(int POSICION_Y);
