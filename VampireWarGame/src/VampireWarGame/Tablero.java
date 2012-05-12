@@ -12,10 +12,6 @@ package VampireWarGame;
 public class Tablero {
         public static Fichas Arreglo[][]=new Fichas[6][6];
     
-    public Tablero(){
-    
-    }
-    
     public void Iniciar(){
         Fichas HL1B=new HombreLobo("HL1B","Blanco");
         Fichas VP1B=new Vampire("VP1B","Blanco");
@@ -25,11 +21,11 @@ public class Tablero {
         Fichas MR2B=new Muerte("MR2B","Blanco");
                 
             Arreglo[0][0]=HL1B;
-            Arreglo[0][1]=VP1B;
-            Arreglo[0][2]=MR1B;
-            Arreglo[0][3]=HL2B;
-            Arreglo[0][4]=VP2B;
-            Arreglo[0][5]=MR2B;
+            Arreglo[1][0]=VP1B;
+            Arreglo[2][0]=MR1B;
+            Arreglo[3][0]=HL2B;
+            Arreglo[4][0]=VP2B;
+            Arreglo[5][0]=MR2B;
         
             
         Fichas HL1N=new HombreLobo("HL1N","Negro");
@@ -39,19 +35,19 @@ public class Tablero {
         Fichas VP2N=new Vampire("VP2N","Negro");
         Fichas MR2N=new Muerte("MR2N","Negro");
         
-            Arreglo[5][0]=HL1N;
-            Arreglo[5][1]=VP1N;
-            Arreglo[5][2]=MR1N;
-            Arreglo[5][3]=HL2N;
-            Arreglo[5][4]=VP2N;
+            Arreglo[0][5]=HL1N;
+            Arreglo[1][5]=VP1N;
+            Arreglo[2][5]=MR1N;
+            Arreglo[3][5]=HL2N;
+            Arreglo[4][5]=VP2N;
             Arreglo[5][5]=MR2N;
-            
     }
+    
     public void Imprimir(){
         for(int y=0;y<6;y++){
                 for(int x=0;x<6;x++){
-                if(Arreglo[y][x]!=null){
-                        System.out.print(Arreglo[y][x].nombreFicha+" ");
+                if(Arreglo[x][y]!=null){
+                        System.out.print(Arreglo[x][y].nombreFicha+" ");
                 }else{
                     System.out.print("  -  ");
                 }
@@ -65,22 +61,15 @@ public class Tablero {
     public boolean Movimiento(String posActual,String posDestino){
        String p1= ""+posActual.charAt(1);
        
-      
         int YposActual = y(posActual.charAt(0));
         int XposActual = Integer.parseInt(p1);
         
-        
-      
-       return Arreglo[YposActual][XposActual].validarMovieminto(posActual, posDestino);
-        
-     
+       return Arreglo[XposActual][YposActual].validarMovieminto(posActual, posDestino);
     }
     
-    public static void HacerElMovimiento(int YposActual,int XposActual,int YposDestino,int XposDestino){
-       
-      Arreglo[YposDestino][XposDestino]=Arreglo[YposActual][XposActual];
-       Arreglo[YposActual][XposActual]=null;
-    
+    public static void HacerElMovimiento(int XposActual,int YposActual,int XposDestino,int YposDestino){
+      Arreglo[XposDestino][YposDestino]=Arreglo[XposActual][YposActual];
+      Arreglo[XposActual][YposActual]=null;
     }
     
     public int y(char y){
@@ -97,17 +86,9 @@ public class Tablero {
     
     public boolean Ataque(String posActual,String posEnemigo){
        String p1= ""+posActual.charAt(1);
-       
       
         int YposActual = y(posActual.charAt(0));
         int XposActual = Integer.parseInt(p1);
-        
-        
-      
-       return Arreglo[YposActual][XposActual].ValidarAtaque(posActual, posEnemigo);
-        
-     
+        return Arreglo[YposActual][XposActual].ValidarAtaque(posActual, posEnemigo);
     }
-    
-    
 }   
