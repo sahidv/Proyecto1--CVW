@@ -54,11 +54,14 @@ public class HombreLobo extends Fichas{
         int XposDestino = Integer.parseInt(p2);
         
         //aqui va validar el movimiento
-       
-        //aqui llama la funcion de tabla que hace el movmiento
-        // y retorna true a tablero
-        Tablero.HacerElMovimiento(YposActual,XposActual,YposDestino,XposDestino);
-        return true;
+        if(posInicial.equals(posDestino))
+            return false;
+        
+        if((posDestino.charAt(1) - posInicial.charAt(1)) == 2){
+            Tablero.HacerElMovimiento(XposActual, YposActual, XposDestino, YposDestino);
+            return true;
+        }
+        return false;
     }
 
     @Override
