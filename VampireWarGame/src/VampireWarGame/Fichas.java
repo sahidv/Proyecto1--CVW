@@ -26,7 +26,7 @@ public abstract class Fichas {
     
     public abstract int setDamagePoints(int codigoFicha);
     
-    public int y(char y){
+    public int y (char y){
         switch(y){   
     case 'A': return 0;
     case 'B': return 1;
