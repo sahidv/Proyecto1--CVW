@@ -61,7 +61,7 @@ public class Tablero {
     public boolean Movimiento(String posActual,String posDestino){
        String p1= ""+posActual.charAt(1);
        
-        int YposActual = y(posActual.charAt(0));
+        int YposActual = x(posActual.charAt(0));
         int XposActual = Integer.parseInt(p1);
         
        return Arreglo[XposActual][YposActual].validarMovieminto(posActual, posDestino);
@@ -72,8 +72,8 @@ public class Tablero {
       Arreglo[XposActual][YposActual]=null;
     }
     
-    public int y(char y){
-        switch(y){   
+    public int x(char x){
+        switch(x){   
     case 'A': return 0;
     case 'B': return 1;
     case 'C': return 2;
@@ -87,7 +87,7 @@ public class Tablero {
     public boolean Ataque(String posActual,String posEnemigo){
        String p1= ""+posActual.charAt(1);
       
-        int YposActual = y(posActual.charAt(0));
+        int YposActual = x(posActual.charAt(0));
         int XposActual = Integer.parseInt(p1);
         return Arreglo[YposActual][XposActual].ValidarAtaque(posActual, posEnemigo);
     }
