@@ -54,13 +54,16 @@ public class HombreLobo extends Fichas{
         int XposDestino = Integer.parseInt(p2);
         
         //aqui va validar el movimiento
-        if(posInicial.equals(posDestino))
+        if(posInicial.equals(posDestino)){
+            System.out.println("Moviento Invalido");
             return false;
+        }
         
         if((posDestino.charAt(1) - posInicial.charAt(1)) == 2){
             Tablero.HacerElMovimiento(XposActual, YposActual, XposDestino, YposDestino);
             return true;
         }
+        System.out.println("Moviento Invalido");
         return false;
     }
 

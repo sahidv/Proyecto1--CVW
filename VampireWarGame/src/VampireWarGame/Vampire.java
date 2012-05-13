@@ -57,11 +57,17 @@ public class Vampire extends Fichas{
         int XposDestino = Integer.parseInt(p2);
         
         //aqui va validar el movimiento
-       
-        //aqui llama la funcion de tabla que hace el movmiento
-        // y retorna true a tablero
-        Tablero.HacerElMovimiento(YposActual,XposActual,YposDestino,XposDestino);
-        return true;
+        if(posInicial.equals(posDestino)){
+            System.out.println("Moviento Invalido");
+            return false;
+        }
+        
+        if((posDestino.charAt(1) - posInicial.charAt(1)) == 1){
+            Tablero.HacerElMovimiento(XposActual, YposActual, XposDestino, YposDestino);
+            return true;
+        }
+        System.out.println("Moviento Invalido");
+        return false;
     }
 
     @Override
