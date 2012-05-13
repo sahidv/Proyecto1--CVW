@@ -22,7 +22,7 @@ public class Test {
     //TB.Movimiento("A1", "C4");
     //TB.Imprimir();
     
-    HL.validarMovieminto("A1", "A3");
+    HL.validarMovieminto("A0", "A2");
     TB.Imprimir();
     
     }
