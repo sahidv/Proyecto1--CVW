@@ -9,11 +9,15 @@ public class HombreLobo extends Fichas{
     
     public static final int codigoFicha = 1;
     
+    
     public HombreLobo(String nombre, String color){
         super(nombre,color);
         lifePoints = 10;
+        cantMovientos=2;
+       
+        
     }
-    
+
      
     
     /**
@@ -32,59 +36,21 @@ public class HombreLobo extends Fichas{
     public int setDamagePoints(int codFichaContraria){
         switch (codFichaContraria){
             case 1:
-                return -3;
+                return 3;
             case 2:
-                return -2;
+                return 2;
             case 3:
-                return -1;
+                return 1;
             case 4:
-                return -2;
+                return 2;
             default: return 0;       
         } 
     }
-    
-   @Override
-    public boolean validarMovieminto(String posInicial, String posDestino) {
-       String p1= ""+posInicial.charAt(1);
-       String p2= ""+posDestino.charAt(1);
-      
-        int YposActual = y(posInicial.charAt(0));
-        int XposActual = Integer.parseInt(p1);
-        int YposDestino = y(posDestino.charAt(0));
-        int XposDestino = Integer.parseInt(p2);
-        
-        //aqui va validar el movimiento
-        if(posInicial.equals(posDestino)){
-            System.out.println("Moviento Invalido");
-            return false;
-        }
-        
-        if((posDestino.charAt(1) - posInicial.charAt(1)) == 2){
-            Tablero.HacerElMovimiento(XposActual, YposActual, XposDestino, YposDestino);
-            return true;
-        }
-        System.out.println("Moviento Invalido");
-        return false;
-    }
 
     @Override
-    public boolean ValidarAtaque(String posInicial, String posEnemigo) {
-        String p1= ""+posInicial.charAt(1);
-        String p2= ""+posEnemigo.charAt(1);
-      
-        int YposActual = y(posInicial.charAt(0));
-        int XposActual = Integer.parseInt(p1);
-        int YposDestino = y(posEnemigo.charAt(0));
-        int XposDestino = Integer.parseInt(p2);
-        
-        //aqui va validar el Ataque
-       
-        //aqui llama la funcion de que Hace el Atque y hace el dano a la ficha contraria
-        // y retorna true a tablero
-        //
-        return true;
+    public int getlifePoints() {
+       return lifePoints;
     }
-    
-        
+      
 }
         
