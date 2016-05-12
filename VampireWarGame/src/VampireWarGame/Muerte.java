@@ -19,231 +19,172 @@ public class Muerte extends Fichas{
     }
     
     public boolean castZombie(int XposDestino,int YposDestino){
-       if(Tablero.Arreglo[YposDestino][XposDestino]==null){
+       if(SystemJuego.TB.Arreglo[YposDestino][XposDestino]==null){
             
-                Tablero.Arreglo[YposDestino][XposDestino]=new Zombie("ZOM"+nombreFicha.charAt(3), colorFicha);
+                SystemJuego.TB.Arreglo[YposDestino][XposDestino]=new Zombie("ZOM"+nombreFicha.charAt(3), colorFicha);
                 return true;
             
        }else 
            return false;
     }
     
-    public boolean CastZombie(String posDestino){
-       
-       String p2= ""+posDestino.charAt(1);
-      
-        
-        int XposDestino = x(posDestino.charAt(0));
-        int YposDestino = Integer.parseInt(p2)-1;
-        return castZombie(XposDestino,YposDestino);
-        
-    }
-
-    @Override
-    public boolean validarMovieminto(int XposActual, int YposActual, int XposDestino, int YposDestino, int Mov) {
-        
-       
+    public boolean ValidarM(int XposActual, int YposActual, int XposDestino, int YposDestino, int Mov,int t){
         
         
-        if(YposActual<YposDestino&&Mov>0){
-                    if(XposActual<XposDestino){
-                        
-                        if(Mov==1){
-                              if(Tablero.Arreglo[YposActual+1][XposActual-1]==null&&YposActual+1<6&&XposActual-1>=0
-                                      &&YposActual+1==YposDestino&&XposActual-1==XposDestino
-                                      ||Tablero.Arreglo[YposActual+1][XposActual-1]==null&&YposActual+1<6&&XposActual-1>=0
-                                      &&YposActual-1==YposDestino&&XposActual+1==XposDestino){
+        if(t==0){
+            
+            if(Mov==1){
+                              if(SystemJuego.TB.Arreglo[YposActual][XposActual+1]==null&&XposActual+1<6
+                                 &&YposActual==YposDestino&&XposActual+1==XposDestino
+                                      
+                                      
+                                 ||SystemJuego.TB.Arreglo[YposActual][XposActual-1]==null&&XposActual-1>=0
+                                 &&YposActual==YposDestino&&XposActual-1==XposDestino){
                                   
                                     Mov=0;
-                                        return true;
-                              }                           
-                                                     
-                                  }
-                        
-                        if(Tablero.Arreglo[YposActual+1][XposActual+1]==null&&YposActual+1<6&&XposActual+1<6){
-                                                     
-                                                     
-                            return validarMovieminto(XposActual+1,YposActual+1,XposDestino,YposDestino,Mov-1);
-                        }     
-                    } 
-
-                    if(XposActual>XposDestino&&Mov>0){
-                        
-                        if(Mov==1){
-                              if(Tablero.Arreglo[YposActual+1][XposActual+1]==null&&YposActual+1<6&&XposActual+1<6
-                                      &&YposActual+1==YposDestino&&XposActual+1==XposDestino
-                                      ||Tablero.Arreglo[YposActual-1][XposActual-1]==null&&YposActual-1>=0&&XposActual-1>=0
-                                      &&YposActual-1==YposDestino&&XposActual-1==XposDestino){
-                                        Mov=0;
-                                  return true;
-                              }                           
-                                                     
-                                  }
-                        
-                        if(Tablero.Arreglo[YposActual+1][XposActual-1]==null&&YposActual+1<6&&XposActual-1>=0){
-                                           
-                            return validarMovieminto(XposActual-1,YposActual+1,XposDestino,YposDestino,Mov-1);
-                            
-                    }
-                   }
-
-                  if(XposActual==XposDestino&&Mov>0){
-                      
-                      if(Mov==1){
-                              if(Tablero.Arreglo[YposActual][XposActual-1]==null&&XposActual-1>=0
-                                      &&YposActual==YposDestino&&XposActual-1==XposDestino
-                                      ||Tablero.Arreglo[YposActual][XposActual+1]==null&&XposActual+1<6
-                                      &&YposActual==YposDestino&&XposActual+1==XposDestino){
-                                       Mov=0;
-                                  return true;
-                              }                           
-                                                     
-                                  }
-                      
-                      
-                   if(Tablero.Arreglo[YposActual+1][XposActual]==null&&YposActual+1<6&&Mov>0){
-                                            
-                            return validarMovieminto(XposActual,YposActual+1,XposDestino,YposDestino,Mov-1);
-                            
-                   }
-                   
-                   }
-                    
-            }
-                        
-            
-            
-            if(YposActual>YposDestino&&Mov>0){
-                    if(XposActual<XposDestino){
-                        
-                         if(Mov==1){
-                              if(Tablero.Arreglo[YposActual+1][XposActual+1]==null&&YposActual+1<6&&XposActual+1<6
-                                      &&YposActual+1==YposDestino&&XposActual+1==XposDestino
-                                      ||Tablero.Arreglo[YposActual-1][XposActual-1]==null&&YposActual-1>=0&&XposActual-1>=0
-                                      &&YposActual-1==YposDestino&&XposActual-1==XposDestino){
-                                        Mov=0;
-                                  return true;
-                              }                           
-                                                     
-                                  }
-                        
-                        if(Tablero.Arreglo[YposActual-1][XposActual+1]==null&&YposActual-1>=0&&XposActual+1<6)
-                                               
-                            return validarMovieminto(XposActual+1,YposActual-1,XposDestino,YposDestino,Mov-1);
-                            
-                    }
-
-                    if(XposActual>XposDestino){
-                        
-                        if(Mov==1){
-                              if(Tablero.Arreglo[YposActual-1][XposActual+1]==null&&YposActual-1>=0&&XposActual+1<6
-                                      &&YposActual-1==YposDestino&&XposActual+1==XposDestino
-                                      ||Tablero.Arreglo[YposActual+1][XposActual-1]==null&&YposActual+1<6&&XposActual-1>=0
-                                      &&YposActual+1==YposDestino&&XposActual-1==XposDestino){
-                                        Mov=0;
-                                  return true;
-                              }                           
-                                                     
-                                  }
-                        
-                        if(Tablero.Arreglo[YposActual-1][XposActual-1]==null&&YposActual-1>=0&&XposActual-1>=0)
-                                            
-                            return validarMovieminto(XposActual-1,YposActual-1,XposDestino,YposDestino,Mov-1);
-                            
-                    }
-
-                    if(XposActual==XposDestino&&Mov>0){
-                        
-                        if(Mov==1){
-                              if(Tablero.Arreglo[YposActual][XposActual-1]==null&&XposActual-1>=0
-                                      &&YposActual==YposDestino&&XposActual-1==XposDestino
-                                      ||Tablero.Arreglo[YposActual][XposActual+1]==null&&XposActual+1<6
-                                      &&YposActual==YposDestino&&XposActual+1==XposDestino){
-                                        Mov=0;
-                                  return true;
-                              }                           
-                                                     
-                                  }
-                        
-                        if(Tablero.Arreglo[YposActual-1][XposActual]==null&&YposActual-1>=0)
-                                      
-                            return validarMovieminto(XposActual,YposActual-1,XposDestino,YposDestino,Mov-1);
-                            
-                    } 
-                   
-            }          
-                    
-            
-            
-          if(YposActual==YposDestino&&Mov>0){
-                    if(XposActual<XposDestino){
-                        
-                        if(Mov==1){
-                              if(Tablero.Arreglo[YposActual+1][XposActual]==null&&YposActual+1<6
-                                      &&YposActual+1==YposDestino&&XposActual==XposDestino
-                                      ||Tablero.Arreglo[YposActual-1][XposActual]==null&&YposActual-1>=0
-                                      &&YposActual-1==YposDestino&&XposActual==XposDestino){
-                                       Mov=0;
-                                  return true;
-                              }                           
-                                                     
-                                  }
-                        
-                        if(Tablero.Arreglo[YposActual][XposActual+1]==null&&XposActual+1<6)
-                                               
-                            return validarMovieminto(XposActual+1,YposActual,XposDestino,YposDestino,Mov-1);
-                            
-                      }
-                    
-                    if(XposActual>XposDestino){
-                        
-                        if(Mov==1){
-                              if(Tablero.Arreglo[YposActual+1][XposActual]==null&&YposActual+1<6
-                                      &&YposActual+1==YposDestino&&XposActual==XposDestino
-                                      ||Tablero.Arreglo[YposActual-1][XposActual]==null&&YposActual-1>=0
-                                      &&YposActual-1==YposDestino&&XposActual==XposDestino){
-                                        Mov=0;
-                                  return true;
-                              }                           
-                                                     
-                                  }
-                        
-                        if(Tablero.Arreglo[YposActual][XposActual-1]==null&&XposActual-1>=0)
+                                    return true;
                                     
-                            return validarMovieminto(XposActual-1,YposActual,XposDestino,YposDestino,Mov-1);
-                            
-                    }
-
-                    if(XposActual==XposDestino&&Mov>0){
-                        
-                        return false;
-                            
-                    } 
-                    
-                        
-                   
-          }
-          
-          if(YposActual==YposDestino&&XposActual==XposDestino&&Mov<1){
-              return true;
-          }else
-              return false;
+                              }                           
+                                                     
+            }
             
-           
+            if(SystemJuego.TB.Arreglo[YposActual+1][XposActual]==null&&YposActual+1<6){
+                
+                    return ValidarM(XposActual,YposActual+1,XposDestino,YposDestino,Mov-1,t);
+                    
+            }else{
+            
+                return false;
+            }
+            
+            
+        }
+        
+        if(t==1){
+            
+            if(Mov==1){
+                              if(SystemJuego.TB.Arreglo[YposActual][XposActual+1]==null&&XposActual+1<6
+                                 &&YposActual==YposDestino&&XposActual+1==XposDestino
+                                      
+                                      
+                                 ||SystemJuego.TB.Arreglo[YposActual][XposActual-1]==null&&XposActual-1>=0
+                                 &&YposActual==YposDestino&&XposActual-1==XposDestino){
+                                  
+                                    Mov=0;
+                                    return true;
+                                    
+                              }                           
+                                                     
+            }
+            
+            if(SystemJuego.TB.Arreglo[YposActual-1][XposActual]==null&&YposActual-1>=0){
+                
+                    return ValidarM(XposActual,YposActual-1,XposDestino,YposDestino,Mov-1,t);
+                    
+            }else{
+            
+                return false;
+            }
+            
+            
+        }
+        
+        if(t==2){
+            
+            if(Mov==1){
+                              if(SystemJuego.TB.Arreglo[YposActual+1][XposActual]==null&&YposActual+1<6
+                                 &&YposActual+1==YposDestino&&XposActual==XposDestino
+                                      
+                                      
+                                 ||SystemJuego.TB.Arreglo[YposActual-1][XposActual]==null&&YposActual-1>=0
+                                 &&YposActual-1==YposDestino&&XposActual==XposDestino){
+                                  
+                                    Mov=0;
+                                    return true;
+                                    
+                              }                           
+                                                     
+            }
+            
+            if(SystemJuego.TB.Arreglo[YposActual][XposActual+1]==null&&XposActual+1<6){
+                
+                    return ValidarM(XposActual+1,YposActual,XposDestino,YposDestino,Mov-1,t);
+                    
+            }else{
+            
+                return false;
+            }
+            
+            
+            
+        }
+        if(t==3){
+            
+            if(Mov==1){
+                              if(SystemJuego.TB.Arreglo[YposActual+1][XposActual]==null&&YposActual+1<6
+                                 &&YposActual+1==YposDestino&&XposActual==XposDestino
+                                      
+                                      
+                                 ||SystemJuego.TB.Arreglo[YposActual-1][XposActual]==null&&YposActual-1>=0
+                                 &&YposActual-1==YposDestino&&XposActual==XposDestino){
+                                  
+                                    Mov=0;
+                                    return true;
+                                    
+                              }                           
+                                                     
+            }
+            
+            if(SystemJuego.TB.Arreglo[YposActual][XposActual-1]==null&&XposActual-1>=0){
+                
+                    return ValidarM(XposActual-1,YposActual,XposDestino,YposDestino,Mov-1,t);
+                    
+            }else{
+            
+                return false;
+            }
+            
+            
+            
+        }
+        
+        
+        return false;
         
         
     }
-    /**
-     * 
-     * @param codFichaContraria
-     * @Param Lista de codigos de fichas:
-     *        1 Hombre Lobo
-     *        2 Vampiro
-     *        3 Muerte
-     *        4 Zombie
-     * @return el daño total que le hace a la ficha contraria, este valo
-     *         se lo restamos a los LP's de la ficha atacada
-     */
+    
+    
+   @Override
+    public boolean validarMovieminto(int XposActual, int YposActual, int XposDestino, int YposDestino, int Mov) {
+       
+       
+       if(YposDestino-YposActual==2){
+       
+           return ValidarM(XposActual,YposActual,XposDestino,YposDestino,Mov,0);
+           
+        }
+       
+       if(YposActual-YposDestino==2){
+       
+           return ValidarM(XposActual,YposActual,XposDestino,YposDestino,Mov,1);
+           
+        }
+       
+        if(XposDestino-XposActual==2){
+       
+           return ValidarM(XposActual,YposActual,XposDestino,YposDestino,Mov,2);
+           
+        }
+        
+        if(XposActual-XposDestino==2){
+       
+           return ValidarM(XposActual,YposActual,XposDestino,YposDestino,Mov,3);
+           
+        }
+       
+       return false;
+   }
     
     @Override
     public int setDamagePoints(int codFichaContraria){
@@ -268,21 +209,21 @@ public class Muerte extends Fichas{
        
         if(Math.abs(XposActual-XposDestino)>=2&&Math.abs(YposActual-YposDestino)>=2&&
                 Math.abs(XposActual-XposDestino)<=3&&Math.abs(YposActual-YposDestino)<=3&&
-                Tablero.Arreglo[YposDestino][XposDestino]!=null&&Tablero.Arreglo[YposActual][XposActual]!=null){
+                SystemJuego.TB.Arreglo[YposDestino][XposDestino]!=null&&SystemJuego.TB.Arreglo[YposActual][XposActual]!=null){
             
             return true;
         
         }else if(
                 Math.abs(XposActual-XposDestino)>=2&&Math.abs(XposActual-XposDestino)<=3&&
                 Math.abs(YposActual-YposDestino)==0&&
-                Tablero.Arreglo[YposDestino][XposDestino]!=null&&Tablero.Arreglo[YposActual][XposActual]!=null){
+                SystemJuego.TB.Arreglo[YposDestino][XposDestino]!=null&&SystemJuego.TB.Arreglo[YposActual][XposActual]!=null){
             
         return true;
         
         }else if(
                 Math.abs(YposActual-YposDestino)>=2&&Math.abs(YposActual-YposDestino)<=3&&
                 Math.abs(XposActual-XposDestino)==0&&
-                Tablero.Arreglo[YposDestino][XposDestino]!=null&&Tablero.Arreglo[YposActual][XposActual]!=null){
+                SystemJuego.TB.Arreglo[YposDestino][XposDestino]!=null&&SystemJuego.TB.Arreglo[YposActual][XposActual]!=null){
            
         return true;
         

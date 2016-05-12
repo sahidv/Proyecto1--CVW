@@ -15,12 +15,26 @@ public class Test {
     public static void main(String args[]){
    
             
-    Tablero TB=new Tablero();
-    TB.Iniciar();
+    SystemJuego TB=new SystemJuego();
+   
     TB.Imprimir();
     
               
    
+    /*
+     * Si quiere Hacer  LLamen la funcion Movimiento("", "") de Tablero Escriba en la Primera 
+     * en la Primera String la coordenada de la ficha a mover y el destino la siguente
+     * 
+     * Atacar con la Funcion con la misma Idea de Movimento :: Ataque("C1", "C4")
+     * 
+     * 
+     */
+    
+    
+    
+    
+    
+    
         /*System.out.println(TB.Movimiento("A1", "B2"));
         System.out.println(TB.Ataque("B2", "B1"));
         
@@ -73,4 +87,3 @@ public class Test {
     }
     
     }
-
